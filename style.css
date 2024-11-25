@@ -1,0 +1,14 @@
+h1 {
+    font-size: 72;
+}
+
+h2{
+    color: blueviolet;
+}
+
+p{
+    width: 300px;
+    padding: 20px gray ;
+    margin: 20px solid red ;
+    border: 20px solid black;
+}
