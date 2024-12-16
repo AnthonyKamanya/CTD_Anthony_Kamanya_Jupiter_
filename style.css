@@ -3,12 +3,12 @@ h1 {
 }
 
 h2{
-    color: blueviolet;
+    color: blue;
 }
 
 p{
-    width: 300px;
+    width: 800px;
     padding: 20px gray ;
     margin: 20px solid red ;
-    border: 20px solid black;
+    border: 5px solid gray;
 }
