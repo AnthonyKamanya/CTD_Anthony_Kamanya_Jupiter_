@@ -1,12 +1,41 @@
 body{
+    text-align: center;
     background-color: #333;
-    color: #f4f4f4;
+    color: lightblue;
+    
 }
 
-section{
-    color: yellow;
-}
+.rubik-puddles-regular {
+    font-family: "Rubik Puddles", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 a {
     color: darksalmon;
+}
+h1{
+    font-size: 50px;
+    color: aliceblue;
+}
+
+h2{
+    font-size: 36px;
+    font-weight: bold;
+    color: lightskyblue;
+}
+.experience-container{
+    padding: 5px;
+    margin: 5px;
+    background-color: lightslategray;
+    ;
+}
+
+.experience-course{
+    padding: 5px;
+    margin: 5px;
+    color: black;
+    background-color: lightgray;
+    ;
 }

@@ -5,12 +5,21 @@ h1 {
 }
 
 h2{
-    color: blue;
+    color: white;
 }
 
-p{
-    width: 800px;
-    padding: 20px gray ;
-    margin: 20px solid red ;
-    border: 5px solid gray;
+
+#About{
+    padding: 30px;
+    width: auto;
+}
+
+#Experience{
+    padding: 30px;
+    width: auto;
+}
+
+#Connect{
+    padding: 30px;
+    width: auto;
 }
