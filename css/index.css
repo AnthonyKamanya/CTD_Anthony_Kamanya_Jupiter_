@@ -1,0 +1,81 @@
+/* Background */
+body{
+    text-align: center;
+    background-color: #333;
+    color: lightblue;
+    margin: 0;
+}
+
+
+/* navigation-Section */
+#navigation{
+    position: sticky;
+    top:0;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: lightslategray;
+    ;
+}
+
+.navigation{
+    display: flex;
+    gap: 4em;
+    padding-bottom: 0;
+    justify-content:space-around
+}
+
+/* google fonts for my name */
+.delius-swash-caps-regular {
+    font-family: "Delius Swash Caps", serif;
+    font-weight: 200;
+}
+
+/* profile picture edits */
+.profile_picture{
+    border-radius: 1em;
+}
+
+h1{
+    font-size: 60px;
+    color: aliceblue;
+}
+
+h2{
+    font-size: 36px;
+    font-weight: bold;
+    color: lightskyblue;
+}
+
+#about{
+    padding: 5px;
+    margin: 20px 50px;
+}
+
+/* Experience-Section */
+.experience-container{
+    display: flex;
+    justify-content:space-around;
+    padding: 5px 30px;
+    margin:0 ;
+    background-color: lightslategray;
+}
+
+.experience-detail{
+    padding: 5px;
+    margin: 5px 20px;
+    color: black;
+}
+
+/* Connect */
+#connect{
+    display: flex;
+    justify-content:space-around;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: 0.2s;
+    padding: 10px;
+}
+
+.social-links:hover{
+    color: lightblue;
+}
