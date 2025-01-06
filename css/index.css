@@ -14,14 +14,15 @@ body{
     padding: 5px;
     margin: 10px 0;
     background-color: lightslategray;
-    ;
+    
 }
 
 .navigation{
     display: flex;
     gap: 4em;
     padding-bottom: 0;
-    justify-content:space-around
+    justify-content:space-around;
+    list-style-type:none;
 }
 
 /* google fonts for my name */
