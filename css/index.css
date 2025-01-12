@@ -1,82 +1,54 @@
+/* Create a default style either mobile or desktop. recommended mobile*/
+/* font-size-rem
+Padding and margin = em
+width= percentage and em */
 /* Background */
 body{
-    text-align: center;
-    background-color: #333;
-    color: lightblue;
+    font-size: 1.125rem;
+    color: gray;
     margin: 0;
+    border: 2px solid red;
 }
-
-
-/* navigation-Section */
-#navigation{
-    position: sticky;
-    top:0;
-    padding: 5px;
-    margin: 10px 0;
-    background-color: lightslategray;
-    
-}
-
-.navigation{
-    display: flex;
-    gap: 4em;
-    padding-bottom: 0;
-    justify-content:space-around;
-    list-style-type:none;
-}
-
-/* google fonts for my name */
-.delius-swash-caps-regular {
-    font-family: "Delius Swash Caps", serif;
-    font-weight: 200;
-}
-
-/* profile picture edits */
-.profile_picture{
-    border-radius: 1em;
-}
-
+/* Typography */
 h1{
-    font-size: 60px;
-    color: aliceblue;
+    font-size: 3rem;
+    color: #212614;
 }
 
 h2{
-    font-size: 36px;
-    font-weight: bold;
-    color: lightskyblue;
+    font-size: 1.5rem;
+    color: #b7832f;;
 }
 
-#about{
-    padding: 5px;
-    margin: 20px 50px;
+/* layout */
+img{
+    max-width: 100%;
+}
+.container{
+    width: 90%;
+    max-width: 980px;
+    margin: 0 auto;
+    border: 2px solid red;
+
 }
 
-/* Experience-Section */
+#navigation{
+    text-align: center;
+    border: 2px solid blue;
+}
+.navigation{
+    display: flex;
+    position: sticky;
+    list-style: none;
+    border: 2px solid red;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
 .experience-container{
     display: flex;
-    justify-content:space-around;
-    padding: 5px 30px;
-    margin:0 ;
-    background-color: lightslategray;
+    flex-direction: column; /*change with media screen*/
 }
 
-.experience-detail{
-    padding: 5px;
-    margin: 5px 20px;
-    color: black;
-}
 
-/* Connect */
-#connect{
-    display: flex;
-    justify-content:space-around;
-    color: whitesmoke;
-    text-decoration: none;
-    transition: 0.2s;
-    padding: 10px;
-}
-
-.social-links:hover{
-    color: lightblue;
-}
+/* create media queries for larger screen sizes */
