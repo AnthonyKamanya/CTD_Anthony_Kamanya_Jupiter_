@@ -52,7 +52,7 @@ p{
 img{
     max-width: 100%;
 }
-.container{
+/* .container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,7 +74,10 @@ img{
     border: 2px solid red;
     justify-content: space-evenly;
     padding: 0;
-}
+} */
+
+
+
 
 
 .experience-container{
@@ -85,8 +88,8 @@ img{
 
 
 /* create media queries for larger screen sizes */
-/* from a minimum width of 600px and bigger */
-@media screen and (min-width:600px){
+/* from a minimum width of 760px (tablet) and bigger */
+@media screen and (min-width:760px){
     body{
         background: lightblue;
     }
@@ -109,14 +112,14 @@ img{
         }
     }
 
-/* from a minimum width of 800px and bigger */
-@media screen and (min-width:800px){
+/* from a minimum width of 992px(laptops and desktops) and bigger */
+@media screen and (min-width:992px){
     body{
         background: lightgreen;
     }
 }
 
-/* from a minimum width of 1200px and bigger */
+/* from a minimum width of 1200px(larger screens) and bigger */
 @media screen and (min-width:1200px){
     body{
         background: darkblue;
