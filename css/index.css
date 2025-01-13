@@ -62,12 +62,7 @@ img{
 
 .container-wrapper{
     position:sticky;
-    top:0;
-    background-color: #333;
-    
-    
-    
-
+    top:0
 }
 .container-nav{
     
@@ -156,12 +151,6 @@ img{
         margin: 0 auto;
         background: lightslategray;
     }
-    .container-wrapper{
-        position:sticky;
-        top:0;
-        background-color:  lightslategray;}
-        
-        
     .container-nav{
         max-width: 100%;
         width: 100%;
@@ -193,22 +182,12 @@ img{
         margin: 0 auto;
         background: darkolivegreen;
     }
-    .container-wrapper{
-        position:sticky;
-        top:0;
-        background-color:  darkolivegreen;}
-    
 
    
 }
 
 /* from a minimum width of 1200px(larger screens) and bigger */
 @media screen and (min-width:1200px){
-    
-    .container-wrapper{
-        position:sticky;
-        top:0;
-        background-color:  darkblue}
     
     .container-nav{
         display:flex;
