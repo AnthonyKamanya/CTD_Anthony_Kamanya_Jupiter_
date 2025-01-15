@@ -1,78 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Anthony's Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js"></script>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps" rel="stylesheet">
-</head>
-<body> 
-    <nav id="navigation">
-        <ul class="navigation">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#connect">Connect</a></li>
-        </ul>
-    </nav>
-    <h1 class="delius-swash-caps-regular" >Anthony Edem Kamanya</h1>
-    
-        <img class="profile_picture" src="/image/profile_picture.png" alt="My Profile Picture" width="450" height="600">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-wrapper" >
+        <div class="container-nav" >
+          <header>
+            <div class="site-title">
+              <h2>Keep it Simple</h2>
+            </div>
+          </header>
+          <!---  NAVIGATION SECTION   --->
 
-<!---  ABOUT SECTION   --->
+          <nav id="navigation">
+            <ul class="navigation-list" >
+              <li class="navigation-list-item"><a class="navigation-link" href="#about">About</a></li>
+              <li class="navigation-list-item"><a class="navigation-link" href="#skills">Skills</a></li>
+              <li class="navigation-list-item"><a class="navigation-link" href="#projects">Projects</a></li>
+              <li class="navigation-list-item"><a class="navigation-link" href="#experience">Experience</a></li>
+              <li class="navigation-list-item"><a class="navigation-link" href="#connect">Connect</a></li>
+            </ul>
+          </nav>
+          
+        </div> <!--container nav-->
+      </div><!--container wrapper-->
 
-    <section  id="about">
+      <h1 class="delius-swash-caps-regular">Anthony Edem Kamanya</h1>
+
+      <img
+        class="profile_picture"
+        src="/image/profile_picture.png"
+        alt="My Profile Picture"
+        width="450"
+        height="600"
+      />
+
+      <!---  ABOUT SECTION   --->
+
+      <section id="about">
         <h2>About</h2>
-        <p>I am loving the idea of learning to coding and tech enthusiast who loves diving deep into the complexities of these fields. Excited about the chance to use my skills in communication, problem-solving, and teamwork to make a positive impact in the world of software development. I am always up for new challenges and opportunities that will help me grow and thrive in this exciting field.
+        <p>
+          I am loving the idea of learning to coding and tech enthusiast who
+          loves diving deep into the complexities of these fields. Excited about
+          the chance to use my skills in communication, problem-solving, and
+          teamwork to make a positive impact in the world of software
+          development. I am always up for new challenges and opportunities that
+          will help me grow and thrive in this exciting field.
         </p>
-    </section>
+      </section>
 
-<!---  SKILL SECTION   --->
+      <!---  SKILL SECTION   --->
 
-<section  id="skills">
-    <h2>Skills</h2>
-</section>
+      <section id="skills">
+        <h2>Skills</h2>
+      </section>
 
+      <!---  PROJECTS SECTION   --->
 
-<!---  PROJECTS SECTION   --->
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul></ul>
+      </section>
 
-<section  id="projects">
-    <h2>Projects</h2>
-    <ul></ul>
-</section>
+      <!---   EXPERIENCE SECTION - list what type of relevant experience I have...   --->
 
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-container">
+          <h3>2024-Present</h3>
+          <div class="experience-container detail-1">
+            <h4>Software developer Apprentice</h4>
+            <p>
+              Maintaining codebase, creating frontend libraries for other
+              developers and learning
+            </p>
+          </div>
 
-<!---   EXPERIENCE SECTION - list what type of relevant experience I have...   --->
-    
-    <section id="experience"><h2>Experience</h2>
-    <div class="experience-container">
-        <h4>2024-Present</h4>
-        <div class="experience-detail"><h4>Software developer Apprentice</h4><p>maintaining codebase, creating frontend libraries for other developers</p></div>
-        
-        <h3>2021-2024</h3>
-        <div class="experience-detail"><h4>Technical Specialist</h4><p>debugging customers technical issues with their apple devices</p></div>
-        
-        <h3>2016-2021</h3>
-        <div class="experience-detail"><h4>Retail Marketing Manager</h4><p>Managing the product portfolio of power tools accessories across the region</p></div>
-    </div>
-    
-    </section>
+          <h3>2021-2024</h3>
+          <div class="experience-container detail-2">
+            <h4>Technical Specialist</h4>
+            <p>Debugging customers technical issues with their apple devices and finding solution</p>
+          </div>
 
-<!--- CONNECT SECTION - include at least 2 social media links   --->
-    
-    <section id="connect">
-        <div><h2>Connect</h2>
-            <a class="social-links" href="https://github.com/AnthonyKamanya" target="_blank"><ion-icon name="logo-github"></ion-icon></a> 
-            <a class="social-links" href="https://www.linkedin.com/in/anthonykamanya/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <h3>2016-2021</h3>
+          <div class="experience-container detail-3">
+            <h4>Retail Marketing Manager</h4>
+            <p>
+              Managing the product portfolio of power tools accessories across
+              the region
+            </p>
+          </div>
         </div>
-    </section>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
-</body>
+      </section>
+
+      <!--- CONNECT SECTION - include at least 2 social media links   --->
+
+      <section id="connect">
+        <div>
+          <h2>Connect</h2>
+          <a
+            class="social-links"
+            href="https://github.com/AnthonyKamanya"
+            target="_blank"
+            ><ion-icon name="logo-github"></ion-icon
+          ></a>
+          <a
+            class="social-links"
+            href="https://www.linkedin.com/in/anthonykamanya/"
+            target="_blank"
+            ><ion-icon name="logo-linkedin"></ion-icon
+          ></a>
+        </div>
+      </section>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      ></script>
+    </div>
+  </body>
 </html>

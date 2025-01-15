@@ -1,70 +1,130 @@
+/* Create a default style either mobile or desktop. recommended mobile*/
+/* font-size-rem Padding and margin = em width= percentage and em */
+
+
+/* Default style is mobile */
 /* Background */
 body{
-    text-align: center;
-    background-color: #333;
+    font-size: 1.125rem;
     color: lightblue;
+    background-color: #333;
     margin: 0;
+    /* border: 2px solid red; */
+    text-align: center;
+}
+/* Typography */
+h1{
+    font-size: 3rem;
+    color: #212614;
 }
 
-
-/* navigation-Section */
-#navigation{
-    position: sticky;
-    top:0;
-    padding: 5px;
-    margin: 10px 0;
-    background-color: lightslategray;
-    ;
+h2{
+    font-size: 1.5rem;
+    color: lightblue;
+    text-align: center;
 }
 
-.navigation{
+h3{
+    font-size: 1rem;
+    color: lightblue;
+    margin:0;
+    margin-bottom:0.5rem;
+}
+
+h4{
+    font-size: 1rem;
+    color: lightblue;
+    margin:0;
+    margin-bottom:0.5rem;
+    padding:0
+}
+
+p{
+    font-size: 1rem;
+    color: whitesmoke;
+    padding: 0px;
+    margin: 0
+}
+
+#connect{
+    text-align: center;
+}
+/* layout */
+img{
+    height: auto;
+    width: 100%;
+    min-width: 360px;
+    max-width: 500px;
+    border-radius: 1em;
+    
+    
+}
+
+.container-wrapper{
+    position:sticky;
+    top:0
+}
+.container-nav{
+    
     display: flex;
-    gap: 4em;
-    padding-bottom: 0;
-    justify-content:space-around
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 4px solid green; */
+    margin: 0 auto;
+    padding: 0;
+    position:sticky;
+    top:0px;
+}
+
+
+.navigation-list{
+    /* border: 1px solid magenta; */
+  
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    justify-content: space-around;
+ }
+
+
+.navigation-list-item{
+    /* border: 2px dotted orange; */
+    margin: 0 ;
+    padding: 0;
+}
+
+.navigation-link{
+    /* border: 3px solid green; */
+    text-decoration:none;
+    color: whitesmoke;
+    font-weight: 550;
+    margin: 0.3rem;
+}
+
+.navigation-link:hover,
+.navigation-link:focus
+{
+    color: #1792d2;
 }
 
 /* google fonts for my name */
 .delius-swash-caps-regular {
     font-family: "Delius Swash Caps", serif;
     font-weight: 200;
+    text-align: center;
+    color: #f8f8f8;
 }
 
-/* profile picture edits */
-.profile_picture{
-    border-radius: 1em;
-}
 
-h1{
-    font-size: 60px;
-    color: aliceblue;
-}
-
-h2{
-    font-size: 36px;
-    font-weight: bold;
-    color: lightskyblue;
-}
-
-#about{
-    padding: 5px;
-    margin: 20px 50px;
-}
-
-/* Experience-Section */
 .experience-container{
     display: flex;
-    justify-content:space-around;
-    padding: 5px 30px;
-    margin:0 ;
-    background-color: lightslategray;
+    flex-direction: column; 
+    /* border: 2px solid red; */
 }
 
-.experience-detail{
-    padding: 5px;
-    margin: 5px 20px;
-    color: black;
-}
 
 /* Connect */
 #connect{
@@ -72,10 +132,90 @@ h2{
     justify-content:space-around;
     color: whitesmoke;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.5s;
     padding: 10px;
 }
 
 .social-links:hover{
     color: lightblue;
 }
+
+
+/* create media queries for larger screen sizes */
+/* from a minimum width of 760px (tablet) and bigger */
+@media screen and (min-width:760px){
+   
+
+    body{
+        max-width: 760px;
+        margin: 0 auto;
+        background: lightslategray;
+    }
+    .container-nav{
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .experience-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+
+    .detail-1,
+    .detail-2,
+    .detail-3{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        padding: 0 0.5rem;
+        /* border: 2px solid blue; */
+        }
+    }
+
+/* from a minimum width of 992px(laptops and desktops) and bigger */
+@media screen and (min-width:992px){
+    body{
+        max-width: 100%;
+        margin: 0 auto;
+        background: darkolivegreen;
+    }
+
+   
+}
+
+/* from a minimum width of 1200px(larger screens) and bigger */
+@media screen and (min-width:1200px){
+    
+    .container-nav{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 100%;
+    }
+
+    .navigation-list-item{
+        /* border: 2px dotted orange; */
+        padding-top: 1em;
+    }
+
+    body{
+        max-width: 900px;
+        margin: 0 auto;
+        background: darkblue;
+    }
+    .detail-1,
+    .detail-2,
+    .detail-3{
+        flex-direction: row;
+        width: 30%;
+        padding: 0;
+        gap:25px;
+        /* border: 2px solid blue; */
+        }
+    }
+
+    
+
