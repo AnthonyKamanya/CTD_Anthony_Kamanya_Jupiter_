@@ -9,7 +9,7 @@ body.appendChild(footer);// Adding the footer to HTML
 const today = new Date(); // date object creation
 const thisYear = today.getFullYear() // picking only the year
 const copyright = document.createElement('p'); //create the copyright element
-copyright.innerHTML = `<span>&#169 Anthony ${thisYear} </span>` //look inside the HTML to see what's there or put new things inside.
+copyright.innerHTML = `<span>&#169 Anthony ${thisYear}</span>` //look inside the HTML to see what's there or put new things inside.
 footer.appendChild(copyright) // add copyright to the footer
 
 //updating the skillsList
