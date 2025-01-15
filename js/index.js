@@ -13,7 +13,7 @@ copyright.innerHTML = `<span>&#169 Anthony ${thisYear}</span>` //look inside the
 footer.appendChild(copyright) // add copyright to the footer
 
 //updating the skillsList
-const skillsList = ['Javascript','Python','Ruby']
+const skillsList = ['Javascript', 'HTML', 'CSS', 'GitHub','Python','Ruby']
 const skillsSection = document.getElementById('skills')
 const skillsUL = document.createElement('ul')
 skillsUL.className = 'skill-ul'
