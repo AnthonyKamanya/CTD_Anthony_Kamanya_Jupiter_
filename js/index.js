@@ -15,9 +15,12 @@ footer.appendChild(copyright) // add copyright to the footer
 //updating the skillsList
 const skillsList = ['Javascript', 'HTML', 'CSS', 'GitHub','Python','Ruby']
 const skillsSection = document.getElementById('skills')
+const skillsULContainer = document.createElement('div')
+skillsULContainer.className='skills-container'
+skillsSection.appendChild(skillsULContainer)
 const skillsUL = document.createElement('ul')
 skillsUL.className = 'skill-ul'
-skillsSection.appendChild(skillsUL)
+skillsULContainer.appendChild(skillsUL)
 
 skillsList.forEach(skill => {
     let skillLI = document.createElement('li')
