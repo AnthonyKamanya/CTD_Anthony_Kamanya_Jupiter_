@@ -29,6 +29,53 @@ skillsList.forEach(skill => {
 });
 
 
+
+// DOM Selectors (Getting HTML Elements)
+const projectSection = document.getElementById("projects")
+console.log("projectSection: ",projectSection)
+
+const projectList = projectSection.getElementsByTagName("ul")[0]
+console.log("projectList: ",projectList)
+
+
+// Fetch (Getting Projects from GitHub API)
+fetch('https://api.github.com/users/AnthonyKamanya/repos')
+.then((response)=>{
+  return response.json()
+})
+
+
+
+.then((data)=>{
+//TODO add repositories to DOM
+  console.log("Repositories",data)
+// loop through repositories array and
+for (let i = 0; i < data.length; i++){
+    console.log("each data :", i)
+
+    // -get specific project data out
+    const project = data[i].name;
+    // -create DOM (HTML) elements
+    const li =document.createElement("li")
+    // Put the data from the project into the DOM element (li)
+    li.innerText =project;
+    // Add DOM Elements to the page(into projectList)
+    projectList.appendChild(li)
+
+}
+
+})
+
+.catch((error)=>{
+// TODO add error message to DOM
+    console.log(error)
+    const errorMessage = document.createElement("p")
+    errorMessage.innerText =error.message
+    projectSection.appendChild(errorMessage)
+})
+
+
+
 const messageForm = document.getElementsByName('leave_message')[0] //selecting the form by name attribute
 console.log(messageForm) // messageForm is a nodeList with [0] and should be accessed individual inputs
 
@@ -97,21 +144,15 @@ newMessage.appendChild(removeButton);
 messageList[0].appendChild(newMessage) ;
 
 
+//fetch API process
 
+// fetch has two parameters, url and options. The first parameter is required it defines the URL of the request that you want to send. If the URL is the only argument passed into the fetch function then a GET request will be made.
 
+// The second parameter is optional it defines the other components of the request besides the URL:
 
-
-
-
-
-
-
-
-
-
-
-
-
+// method - the method of the request (GET, POST, PUT, PATCH, DELETE)
+// headers - an object whose key-value pairs are header names and values
+// body - value should be a string of the body of the request
 
 
 
