@@ -38,7 +38,18 @@ const projectList = projectSection.getElementsByTagName("ul")[0]
 console.log("projectList: ",projectList)
 
 
+
+//fetch API process
+
+// fetch has two parameters, url and options. The first parameter is required it defines the URL of the request that you want to send. If the URL is the only argument passed into the fetch function then a GET request will be made.
+
+// The second parameter is optional it defines the other components of the request besides the URL:
+
+// method - the method of the request (GET, POST, PUT, PATCH, DELETE)
+// headers - an object whose key-value pairs are header names and values
+// body - value should be a string of the body of the request
 // Fetch (Getting Projects from GitHub API)
+
 fetch('https://api.github.com/users/AnthonyKamanya/repos')
 .then((response)=>{
   return response.json()
@@ -144,61 +155,27 @@ newMessage.appendChild(removeButton);
 messageList[0].appendChild(newMessage) ;
 
 
-//fetch API process
-
-// fetch has two parameters, url and options. The first parameter is required it defines the URL of the request that you want to send. If the URL is the only argument passed into the fetch function then a GET request will be made.
-
-// The second parameter is optional it defines the other components of the request besides the URL:
-
-// method - the method of the request (GET, POST, PUT, PATCH, DELETE)
-// headers - an object whose key-value pairs are header names and values
-// body - value should be a string of the body of the request
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // display messages section
-    // const messageSection =document.getElementsByTagName('ul')
+    const messageSection =document.getElementsByTagName('ul')
     
-    // console.log(messageSection)
+    console.log(messageSection)
 
-    // const messageList = messageSection.getElementsByName('messageSection')
-    // console.log(messageList)
+    const messageList = messageSection.getElementsByName('messageSection')
+    console.log(messageList)
 
     // Hide the message until submission is done
-    // messageSection.hidden = false
+    messageSection.hidden = false
 
     // clear the form after submission
     
-
-
-
-
-
-
-
-
-
-
-
-//
 //    const userName = document.querySelector('#userName')
 //    const userEmail = document.querySelector('#userEmail')
 //    const userMessage = document.querySelector('#userMessage')
    
 //    let messageSection = document.getElementsByName('message')
-//   
+  
 
 //    console.log(event.target.userName)
 //    console.log(event.target.userEmail)
@@ -207,13 +184,6 @@ messageList[0].appendChild(newMessage) ;
 //    console.log(userName.innerHTML)
 //    console.log(userEmail.innerHTML)
 //    console.log(userMessage.innerHTML)
-// }
-
-
-
-
-
-
 
 
 // Extra credit display the message only when there is a message in it
