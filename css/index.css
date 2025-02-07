@@ -237,6 +237,19 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
   
+
+  #messages ul{
+    list-style: none;
+    width: 50%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
 /* create media queries for larger screen sizes */
 /* from a minimum width of 760px (tablet) and bigger */
 
