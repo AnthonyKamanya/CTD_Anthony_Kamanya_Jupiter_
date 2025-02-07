@@ -47,13 +47,14 @@ messageForm.addEventListener("submit", (event)=>{
     const usersMessage = event.target.usersMessage.value
 
     //select the HTML element that will contain new message(<ul></ul>)
-    const messageSection = document.querySelector('#messages')
+    const messageSection = document.querySelector("#messages")
     const messageList = messageSection.querySelector('ul')
-    
+    console.log("message Section",messageSection)
+    console.log("message List",messageList)
 
     //Hide the messagesSection if there is no message recorded
     if(messageList.length === 0){
-            messageSection.hidden = false
+            messageSection.hidden() = true
         }
     
     //create the new message element(<li></li>)
@@ -139,29 +140,6 @@ for (let i = 0; i < data.length; i++){
     errorMessage.innerText =error.message
     projectSection.appendChild(errorMessage)
 })
-
-
-
-
-    // Hide the message until submission is done
-    messageSection.hidden = false
-
-    // clear the form after submission
-    
-//    const userName = document.querySelector('#userName')
-//    const userEmail = document.querySelector('#userEmail')
-//    const userMessage = document.querySelector('#userMessage')
-   
-//    let messageSection = document.getElementsByName('message')
-  
-
-//    console.log(event.target.userName)
-//    console.log(event.target.userEmail)
-//    console.log(event.target.userMessage)
-
-//    console.log(userName.innerHTML)
-//    console.log(userEmail.innerHTML)
-//    console.log(userMessage.innerHTML)
 
 
 // Extra credit display the message only when there is a message in it
