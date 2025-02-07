@@ -29,6 +29,63 @@ skillsList.forEach(skill => {
 });
 
 
+//Use DOM selectors to get the form element
+const messageForm = document.querySelector('[name="leave_message"]')
+console.log(messageForm)
+
+
+// add event listener to form
+// so we can get the user's input values
+// And create new message using the input values
+messageForm.addEventListener("submit", (event)=>{
+    //prevent page from reloading
+    event.preventDefault();
+
+    //getting the values from what the user inputted
+    const usersName = event.target.usersName.value
+    const usersEmail = event.target.usersEmail.value
+    const usersMessage = event.target.usersMessage.value
+
+    //select the HTML element that will contain new message(<ul></ul>)
+    const messageSection = document.querySelector('#messages')
+    const messageList = messageSection.querySelector('ul')
+    
+
+    //Hide the messagesSection if there is no message recorded
+    if(messageList.length === 0){
+            messageSection.hidden = false
+        }
+    
+    //create the new message element(<li></li>)
+    const newMessage = document.createElement("li")
+
+    //Adding the content from the user inputs into the new message element
+    newMessage.innerHTML = `
+    <a href=mailto${usersEmail}>${usersName}</a>
+    <span>${usersMessage}</span>
+    `
+
+    //creating a button to remove the new message
+    const removeButton = document.createElement("button")
+    removeButton.innerText ="remove"
+    removeButton.type = "button"
+
+    //Creating an event listener that removes the new message
+    removeButton.addEventListener("click", (event)=>{
+        const entry = event.target.parentNode;
+        entry.remove()
+    })
+
+    // Add removeButton to the newMessage
+    newMessage.appendChild(removeButton)
+
+    //add new message to DOM
+    messageList.appendChild(newMessage)
+    
+    // reset the form inputs
+    messageForm.reset()
+})
+
 
 // DOM Selectors (Getting HTML Elements)
 const projectSection = document.getElementById("projects")
@@ -36,8 +93,6 @@ console.log("projectSection: ",projectSection)
 
 const projectList = projectSection.getElementsByTagName("ul")[0]
 console.log("projectList: ",projectList)
-
-
 
 //fetch API process
 
@@ -87,83 +142,6 @@ for (let i = 0; i < data.length; i++){
 
 
 
-const messageForm = document.getElementsByName('leave_message')[0] //selecting the form by name attribute
-console.log(messageForm) // messageForm is a nodeList with [0] and should be accessed individual inputs
-
-messageForm.addEventListener("submit",callBack);//adding an event listener to submit button
-
-function callBack(event){
-    event.preventDefault();
-    const data = new FormData(event.target)
-    const name = data.get('userName')
-    const email = data.get('userEmail')
-    const message = data.get('usersMessage')
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message},`)
-
-
-    const messageSection = document.getElementById("messages")
-    console.log(messageSection)
-    const messageList = messageSection.querySelector('ul')
-    console.log(messageList)
-    const newMessage = document.createElement('li')
-    newMessage.textContent = "listMessage"
-    console.log(newMessage)
-    messageList.appendChild(newMessage)
-    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> <span>${message} </span>`
-    
-    messageSection.hidden = false
-    let resetForm = document.getElementsByClassName('message-form')[0].reset() 
-}
-//Create a variable named removeButton
-let removeButton = document.createElement('button')
-removeButton.innerText = "remove"
-removeButton.type = "button"
-
-
-removeButton.addEventListener("click", onRemove)
-
-function onRemove(){
-    let entry =removeButton.parentNode
-    console.log(entry)
-    entry.remove()
-
-    const messageSection = document.getElementsByClassName("message-section")
-    console.log(messageSection)
-    const messageList = messageSection.querySelector('ul')
-    console.log(messageList)
-    if(messageList.length === 0){
-        messageSection.hidden = true
-    }
-    
-}
-
-
-const newMessage = document.createElement("li");
-newString = `<a href="mailto:${email}">${name}</a> <span>${message} </span>` ;
-console.log(newString)
-newMessage.innerHTML = newString;
-
-// Add a remove button
-removeButton.setAttribute("id","removeButtonId")
-removeButton.addEventListener("click", onRemoveButton);
-console.log(removeButton);
-
-//Add remove button
-newMessage.appendChild(removeButton);
-
-//Add message
-messageList[0].appendChild(newMessage) ;
-
-
-
-
-    // display messages section
-    const messageSection =document.getElementsByTagName('ul')
-    
-    console.log(messageSection)
-
-    const messageList = messageSection.getElementsByName('messageSection')
-    console.log(messageList)
 
     // Hide the message until submission is done
     messageSection.hidden = false
