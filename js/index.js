@@ -29,150 +29,117 @@ skillsList.forEach(skill => {
 });
 
 
-const messageForm = document.getElementsByName('leave_message')[0] //selecting the form by name attribute
-console.log(messageForm) // messageForm is a nodeList with [0] and should be accessed individual inputs
+//Use DOM selectors to get the form element
+const messageForm = document.querySelector('[name="leave_message"]')
+console.log(messageForm)
 
-messageForm.addEventListener("submit",callBack);//adding an event listener to submit button
 
-function callBack(event){
+// add event listener to form
+// so we can get the user's input values
+// And create new message using the input values
+messageForm.addEventListener("submit", (event)=>{
+    //prevent page from reloading
     event.preventDefault();
-    const data = new FormData(event.target)
-    const name = data.get('userName')
-    const email = data.get('userEmail')
-    const message = data.get('usersMessage')
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message},`)
 
+    //getting the values from what the user inputted
+    const usersName = event.target.usersName.value
+    const usersEmail = event.target.usersEmail.value
+    const usersMessage = event.target.usersMessage.value
 
-    const messageSection = document.getElementById("messages")
-    console.log(messageSection)
+    //select the HTML element that will contain new message(<ul></ul>)
+    const messageSection = document.querySelector("#messages")
     const messageList = messageSection.querySelector('ul')
-    console.log(messageList)
-    const newMessage = document.createElement('li')
-    newMessage.textContent = "listMessage"
-    console.log(newMessage)
-    messageList.appendChild(newMessage)
-    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> <span>${message} </span>`
-    
-    messageSection.hidden = false
-    let resetForm = document.getElementsByClassName('message-form')[0].reset() 
-}
-//Create a variable named removeButton
-let removeButton = document.createElement('button')
-removeButton.innerText = "remove"
-removeButton.type = "button"
+    console.log("message Section",messageSection)
+    console.log("message List",messageList)
 
-
-removeButton.addEventListener("click", onRemove)
-
-function onRemove(){
-    let entry =removeButton.parentNode
-    console.log(entry)
-    entry.remove()
-
-    const messageSection = document.getElementsByClassName("message-section")
-    console.log(messageSection)
-    const messageList = messageSection.querySelector('ul')
-    console.log(messageList)
+    //Hide the messagesSection if there is no message recorded
     if(messageList.length === 0){
-        messageSection.hidden = true
-    }
+            messageSection.hidden() = true
+        }
     
+    //create the new message element(<li></li>)
+    const newMessage = document.createElement("li")
+
+    //Adding the content from the user inputs into the new message element
+    newMessage.innerHTML = `
+    <a href=mailto${usersEmail}>${usersName}</a>
+    <span>${usersMessage}</span>
+    `
+
+    //creating a button to remove the new message
+    const removeButton = document.createElement("button")
+    removeButton.innerText ="remove"
+    removeButton.type = "button"
+
+    //Creating an event listener that removes the new message
+    removeButton.addEventListener("click", (event)=>{
+        const entry = event.target.parentNode;
+        entry.remove()
+    })
+
+    // Add removeButton to the newMessage
+    newMessage.appendChild(removeButton)
+
+    //add new message to DOM
+    messageList.appendChild(newMessage)
+    
+    // reset the form inputs
+    messageForm.reset()
+})
+
+
+// DOM Selectors (Getting HTML Elements)
+const projectSection = document.getElementById("projects")
+console.log("projectSection: ",projectSection)
+
+const projectList = projectSection.getElementsByTagName("ul")[0]
+console.log("projectList: ",projectList)
+
+//fetch API process
+
+// fetch has two parameters, url and options. The first parameter is required it defines the URL of the request that you want to send. If the URL is the only argument passed into the fetch function then a GET request will be made.
+
+// The second parameter is optional it defines the other components of the request besides the URL:
+
+// method - the method of the request (GET, POST, PUT, PATCH, DELETE)
+// headers - an object whose key-value pairs are header names and values
+// body - value should be a string of the body of the request
+// Fetch (Getting Projects from GitHub API)
+
+fetch('https://api.github.com/users/AnthonyKamanya/repos')
+.then((response)=>{
+  return response.json()
+})
+
+
+
+.then((data)=>{
+//TODO add repositories to DOM
+  console.log("Repositories",data)
+// loop through repositories array and
+for (let i = 0; i < data.length; i++){
+    console.log("each data :", i)
+
+    // -get specific project data out
+    const project = data[i].name;
+    // -create DOM (HTML) elements
+    const li =document.createElement("li")
+    // Put the data from the project into the DOM element (li)
+    li.innerText =project;
+    // Add DOM Elements to the page(into projectList)
+    projectList.appendChild(li)
+
 }
 
+})
 
-const newMessage = document.createElement("li");
-newString = `<a href="mailto:${email}">${name}</a> <span>${message} </span>` ;
-console.log(newString)
-newMessage.innerHTML = newString;
-
-// Add a remove button
-removeButton.setAttribute("id","removeButtonId")
-removeButton.addEventListener("click", onRemoveButton);
-console.log(removeButton);
-
-//Add remove button
-newMessage.appendChild(removeButton);
-
-//Add message
-messageList[0].appendChild(newMessage) ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // display messages section
-    // const messageSection =document.getElementsByTagName('ul')
-    
-    // console.log(messageSection)
-
-    // const messageList = messageSection.getElementsByName('messageSection')
-    // console.log(messageList)
-
-    // Hide the message until submission is done
-    // messageSection.hidden = false
-
-    // clear the form after submission
-    
-
-
-
-
-
-
-
-
-
-
-
-//
-//    const userName = document.querySelector('#userName')
-//    const userEmail = document.querySelector('#userEmail')
-//    const userMessage = document.querySelector('#userMessage')
-   
-//    let messageSection = document.getElementsByName('message')
-//   
-
-//    console.log(event.target.userName)
-//    console.log(event.target.userEmail)
-//    console.log(event.target.userMessage)
-
-//    console.log(userName.innerHTML)
-//    console.log(userEmail.innerHTML)
-//    console.log(userMessage.innerHTML)
-// }
-
-
-
-
-
-
+.catch((error)=>{
+// TODO add error message to DOM
+    console.log(error)
+    const errorMessage = document.createElement("p")
+    errorMessage.innerText =error.message
+    projectSection.appendChild(errorMessage)
+})
 
 
 // Extra credit display the message only when there is a message in it

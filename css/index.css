@@ -209,6 +209,46 @@ form {
     margin-bottom: 15px;
   }
   
+/* Container styling */
+#projects ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+  
+  /* Card styling */
+  #projects li {
+    color: darkgray;
+    background-color: lightcyan;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  /* Hover effect */
+  #projects li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  #messages ul{
+    list-style: none;
+    width: 50%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
 /* create media queries for larger screen sizes */
 /* from a minimum width of 760px (tablet) and bigger */
