@@ -51,11 +51,6 @@ messageForm.addEventListener("submit", (event)=>{
     const messageList = messageSection.querySelector('ul')
     console.log("message Section",messageSection)
     console.log("message List",messageList)
-
-    //Hide the messagesSection if there is no message recorded
-    if(messageList.length === 0){
-            messageSection.hidden() = true
-        }
     
     //create the new message element(<li></li>)
     const newMessage = document.createElement("li")
@@ -110,16 +105,12 @@ fetch('https://api.github.com/users/AnthonyKamanya/repos')
 .then((response)=>{
   return response.json()
 })
-
-
-
 .then((data)=>{
 //TODO add repositories to DOM
   console.log("Repositories",data)
 // loop through repositories array and
 for (let i = 0; i < data.length; i++){
     console.log("each data :", i)
-
     // -get specific project data out
     const project = data[i].name;
     // -create DOM (HTML) elements
@@ -128,11 +119,7 @@ for (let i = 0; i < data.length; i++){
     li.innerText =project;
     // Add DOM Elements to the page(into projectList)
     projectList.appendChild(li)
-
-}
-
-})
-
+}})
 .catch((error)=>{
 // TODO add error message to DOM
     console.log(error)
